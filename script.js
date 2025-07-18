@@ -298,6 +298,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1200);
         });
     }
+
+    // --- Mobile Burger Menu ---
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (burgerBtn && mobileNav) {
+        burgerBtn.addEventListener('click', () => {
+            const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
+            burgerBtn.setAttribute('aria-expanded', !expanded);
+            mobileNav.classList.toggle('open');
+        });
+        // Close mobile nav when a link is clicked
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerBtn.setAttribute('aria-expanded', 'false');
+                mobileNav.classList.remove('open');
+            });
+        });
+    }
 });
 
 // Add window resize handler for responsive design
