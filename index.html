@@ -19,7 +19,7 @@
             <div class="nav-links">
                 <a href="#how-it-works">How It Works</a>
                 <a href="#who-its-for">Who It's For</a>
-                <a href="#footer">Contact</a>
+                <a href="#contact">Contact</a>
             </div>
             <!-- Removed Join Waitlist button from nav-cta -->
         </div>
@@ -51,7 +51,7 @@
                         <div class="or-divider">
                             <span>or</span>
                         </div>
-                        <button id="requestAccess" class="btn-secondary secret-backdoor">Request Access</button>
+                        <button id="requestAccess" class="btn-secondary secret-backdoor">Join the Waitlist</button>
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="notification-item">
                             <div class="step-number">Step 6</div>
-                            <div class="notification-content">You win. Your competitors are still planning.</div>
+                            <div class="notification-content">You win & your competitors are still planning.</div>
                         </div>
                     </div>
                 </div>
@@ -150,19 +150,20 @@
         <div class="bento-item who-its-for-intro" id="who-its-for">
             <div class="bento-content">
                 <h2>Built for the people who make things move</h2>
-                <p>Rayv gives each of these groups exactly what they need — no bloat, no middlemen.</p>
                 <p>Rayv gives each of these groups exactly what they need — no fluff, no gatekeepers.</p>
             </div>
         </div>
 
         <div class="bento-item who-tile-1">
-            <div class="bento-content">
-                <div class="persona-icon">🧑‍💼</div>
-                <h3>Business Owners</h3>
-                <h4>Replace your marketing team</h4>
-                <p>Launch campaigns in minutes, not months. Get videos, reach, and real customers — without paying agencies or running ads.</p>
-                <div class="image-placeholder">
-                    <div class="placeholder-text">Campaign Setup GIF</div>
+            <div class="bento-content business-owner-content">
+                <div class="business-owner-text">
+                    <div class="persona-icon">🧑‍💼</div>
+                    <h3>Business Owners</h3>
+                    <h4>Replace your marketing team</h4>
+                    <p>Launch campaigns in minutes, not months. Get videos, reach, and real customers — without paying agencies or running ads.</p>
+                </div>
+                <div class="business-owner-image">
+                    <img src="create-campaign.jpg" alt="Create Campaign" class="create-campaign-image">
                 </div>
             </div>
         </div>
@@ -211,35 +212,40 @@
                 <h2>We're early — but inevitable.</h2>
                 <p>Join the revolution to democratize marketing.</p>
                 <div class="cta-buttons">
-                    <button class="btn-primary">Talk to the Founder</button>
-                    <button class="btn-secondary">Join the Waitlist</button>
+                    <button class="btn-secondary" id="footerWaitlistBtn">Join the Waitlist</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" id="footer">
+    <footer class="footer" id="contact">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Rayv</h3>
-                <p>Brought to you by your friendly neighborhood marketing team.</p>
+                <div class="footer-logo-row">
+                    <img src="Rayv-black.png" alt="Rayv Logo" class="footer-logo-image">
+                </div>
+                <p>Made with 💖 and a little bit of ✨.</p>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <a href="mailto:tanav@rayv.ai">tanav@rayv.ai</a>
+                <a href="mailto:info@rayv.ai">info@rayv.ai</a>
             </div>
             <div class="footer-section">
                 <h4>Social</h4>
                 <div class="social-links">
-                    <a href="#" class="social-link">Twitter</a>
-                    <a href="#" class="social-link">LinkedIn</a>
-                    <a href="#" class="social-link">Instagram</a>
+                    <a href="https://www.linkedin.com/company/rayv-ai" class="social-link">NPCinkedIn</a>
+                    <a href="https://instagram.com/rayvapp" class="social-link">Instagram @Rayvapp</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Rayv. All rights reserved.</p>
+            <p>&copy; 2025 Rayv. All rights reserved.</p>
+            <div class="footer-legal-links">
+                <a href="#" class="footer-legal-link">Privacy Policy</a>
+                <span class="footer-legal-separator">|</span>
+                <a href="#" class="footer-legal-link">Terms of Service</a>
+            </div>
         </div>
     </footer>
 
@@ -247,10 +253,18 @@
     <div id="betaPopup" class="popup-overlay" style="display: none;">
         <div class="popup-content">
             <div class="popup-header">
-                <h3>🎯 Request Beta Access</h3>
+                <h3>🎯 Join Our Waitlist</h3>
                 <p>You're early. That matters. Tell us why you want in—we actually read this stuff.</p>
             </div>
             <form id="betaForm" class="popup-form">
+                <div class="form-group">
+                    <label for="userType">Are you a Business or Individual?</label>
+                    <select id="userType" name="userType" required>
+                        <option value="" disabled selected>Select one</option>
+                        <option value="business">Business</option>
+                        <option value="individual">Individual</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
                     <input type="text" id="fullName" name="fullName" required>
@@ -276,7 +290,7 @@
         <div class="success-content">
             <div class="success-icon">✅</div>
             <h3>Received.</h3>
-            <p>If you're a fit, we'll reach out. If you're not... well, you won't hear from us. No hard feelings.</p>
+            <p>Thank you for your interest in Rayv! We're so hyped to have you on the list. You'll hear from us soon!</p>
             <button id="closeSuccess" class="btn-primary">Got it</button>
         </div>
     </div>

@@ -1,4 +1,4 @@
-
+ 
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
@@ -199,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterCodeBtn = document.getElementById('enterCode');
     const accessCodeInput = document.getElementById('accessCode');
     const errorMessage = document.getElementById('errorMessage');
-    const requestAccessBtn = document.getElementById('requestAccess');
     const betaPopup = document.getElementById('betaPopup');
     const closePopupBtn = document.getElementById('closePopup');
     const betaForm = document.getElementById('betaForm');
@@ -229,17 +228,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Open popup
-    if (requestAccessBtn && betaPopup) {
-        requestAccessBtn.addEventListener('click', function() {
-            betaPopup.style.display = 'flex';
-        });
+    if (betaPopup) {
+        const requestAccessBtn = document.getElementById('requestAccess');
+        if (requestAccessBtn) {
+            requestAccessBtn.addEventListener('click', function() {
+                betaPopup.style.display = 'flex';
+            });
+        }
     }
 
     // Close popup
-    if (closePopupBtn && betaPopup) {
-        closePopupBtn.addEventListener('click', function() {
-            betaPopup.style.display = 'none';
-        });
+    if (betaPopup) {
+        const closePopupBtn = document.getElementById('closePopup');
+        if (closePopupBtn) {
+            closePopupBtn.addEventListener('click', function() {
+                betaPopup.style.display = 'none';
+            });
+        }
     }
 
     // Handle form submission
@@ -255,6 +260,42 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeSuccessBtn && successMessage) {
         closeSuccessBtn.addEventListener('click', function() {
             successMessage.style.display = 'none';
+        });
+    }
+
+    // --- Custom Waitlist Scroll with Arrow Animation ---
+    const footerWaitlistBtn = document.getElementById('footerWaitlistBtn');
+    const requestAccessBtn = document.getElementById('requestAccess');
+
+    if (footerWaitlistBtn && requestAccessBtn) {
+        footerWaitlistBtn.addEventListener('click', () => {
+            // Create arrow element
+            let arrow = document.createElement('div');
+            arrow.innerHTML = '⬆️';
+            arrow.style.position = 'fixed';
+            arrow.style.left = (footerWaitlistBtn.getBoundingClientRect().left + footerWaitlistBtn.offsetWidth / 2 - 16) + 'px';
+            arrow.style.top = (footerWaitlistBtn.getBoundingClientRect().top - 40) + 'px';
+            arrow.style.fontSize = '2.5rem';
+            arrow.style.zIndex = '2000';
+            arrow.style.transition = 'top 1s cubic-bezier(0.4, 0, 0.2, 1)';
+            arrow.style.pointerEvents = 'none';
+            document.body.appendChild(arrow);
+
+            // Animate arrow upward
+            setTimeout(() => {
+                const targetRect = requestAccessBtn.getBoundingClientRect();
+                arrow.style.top = (window.scrollY + targetRect.top - 60) + 'px';
+            }, 10);
+
+            // Smooth scroll to Request Access button
+            setTimeout(() => {
+                requestAccessBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 200);
+
+            // Remove arrow after animation
+            setTimeout(() => {
+                arrow.remove();
+            }, 1200);
         });
     }
 });
