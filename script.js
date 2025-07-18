@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const particle = document.createElement('div');
         particle.style.cssText = `
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 12px;
+            height: 12px;
             background: var(--primary-color);
             border-radius: 50%;
             opacity: 0.1;
@@ -211,11 +211,19 @@ document.addEventListener('DOMContentLoaded', () => {
         enterCodeBtn.addEventListener('click', function(e) {
             e.preventDefault();
             errorMessage.style.display = 'block';
+            accessCodeInput.classList.remove('shake');
+            void accessCodeInput.offsetWidth; // force reflow
+            accessCodeInput.classList.add('shake');
+            setTimeout(() => accessCodeInput.classList.remove('shake'), 400);
         });
         accessCodeInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 errorMessage.style.display = 'block';
+                accessCodeInput.classList.remove('shake');
+                void accessCodeInput.offsetWidth;
+                accessCodeInput.classList.add('shake');
+                setTimeout(() => accessCodeInput.classList.remove('shake'), 400);
             }
         });
     }
