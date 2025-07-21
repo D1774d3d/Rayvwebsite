@@ -1,6 +1,6 @@
 # Rayv Marketing Website
 
-A modern, Gen Z-style marketing website for Rayv - a platform that helps businesses replace their marketing departments with local customers who create video content, compete, and get rewarded.
+A modern, marketing website for Rayv - a platform that helps businesses replace their marketing departments with local customers who create video content, compete, and get rewarded.
 
 ## 🎨 Design Features
 
@@ -104,9 +104,5 @@ Modify animation timing and effects in `styles.css` and `script.js`:
 ## 📞 Contact
 
 For questions about the website or Rayv platform:
-- Email: tanav@rayv.ai
-- Website: Built with ❤️ for the Rayv team
-
----
-
-*"Brought to you by your friendly neighborhood marketing team."* 
+- Email: info@rayv.ai
+- Website: 
