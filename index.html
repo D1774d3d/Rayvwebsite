@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -38,29 +40,32 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">
-                    We help you <span class="highlight">🔥</span> your marketing department.<span class=sorry-text>Sorry, not sorry.</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Your best marketers are your local customers. We make that happen — with rewards, content, and community.
-                </p>
-                <div class="beta-access">
-                    <div class="beta-header">
-                        <h3>🔐 Unlock the Beta Vault</h3>
-                        <p>This product isn’t public yet. Only the chosen few get a look inside.</p>
-                    </div>
-                    <div class="access-form">
-                        <div class="code-input-group">
-                            <input type="text" id="accessCode" placeholder="6-digit code" maxlength="6" class="code-input">
-                            <button id="enterCode" class="btn-primary">Enter Code</button>
+                <div>
+                    <h1 class="hero-title">
+                        We help you <span class="highlight">🔥</span> your marketing department.<span class=sorry-text>Sorry, not
+                            sorry.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Your best marketers are your local customers. We make that happen — with rewards, content, and community.
+                    </p>
+                    <div class="beta-access">
+                        <div class="beta-header">
+                            <h3>🔐 Unlock the Beta Vault</h3>
+                            <p>This product isn’t public yet. Only the chosen few get a look inside.</p>
                         </div>
-                        <div class="error-message" id="errorMessage" style="display: none;">
-                            ❌ Access Denied. Not the code we were hoping for…
+                        <div class="access-form">
+                            <div class="code-input-group">
+                                <input type="text" id="accessCode" placeholder="6-digit code" maxlength="6" class="code-input">
+                                <button id="enterCode" class="btn-primary">Enter Code</button>
+                            </div>
+                            <div class="error-message" id="errorMessage" style="display: none;">
+                                ❌ Access Denied. Not the code we were hoping for…
+                            </div>
+                            <div class="or-divider">
+                                <span>or</span>
+                            </div>
+                            <button id="requestAccess" class="btn-secondary secret-backdoor">Join the Waitlist</button>
                         </div>
-                        <div class="or-divider">
-                            <span>or</span>
-                        </div>
-                        <button id="requestAccess" class="btn-secondary secret-backdoor">Join the Waitlist</button>
                     </div>
                 </div>
             </div>
@@ -169,7 +174,8 @@
                     <div class="persona-icon">🧑‍💼</div>
                     <h3>Business Owners</h3>
                     <h4>Replace your marketing team</h4>
-                    <p>Launch campaigns in minutes, not months. Get videos, reach, and real customers — without paying agencies or running ads.</p>
+                    <p>Launch campaigns in minutes, not months. Get videos, reach, and real customers — without paying agencies or running
+                        ads.</p>
                 </div>
                 <div class="business-owner-image">
                     <img src="create-campaign.jpg" alt="Create Campaign" class="create-campaign-image">
@@ -306,4 +312,5 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+
+</html>

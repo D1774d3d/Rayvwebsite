@@ -302,19 +302,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Mobile Burger Menu ---
     const burgerBtn = document.getElementById('burgerBtn');
     const mobileNav = document.getElementById('mobileNav');
+    
+    console.log('Burger button found:', burgerBtn);
+    console.log('Mobile nav found:', mobileNav);
+    
     if (burgerBtn && mobileNav) {
+        console.log('Setting up burger menu functionality');
+        
         burgerBtn.addEventListener('click', () => {
+            console.log('Burger button clicked!');
             const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
             burgerBtn.setAttribute('aria-expanded', !expanded);
             mobileNav.classList.toggle('open');
+            console.log('Mobile nav open:', mobileNav.classList.contains('open'));
         });
+        
         // Close mobile nav when a link is clicked
         mobileNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 burgerBtn.setAttribute('aria-expanded', 'false');
                 mobileNav.classList.remove('open');
+                console.log('Mobile nav closed via link click');
             });
         });
+    } else {
+        console.error('Burger menu elements not found!');
     }
 });
 
